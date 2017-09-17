@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+        <div class="col-md-6">
+        <h2>Places you want to search</h2>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input id="search-box" type="text" class="search" [(ngModel)]="searchQuery"  placeholder="Restaurants in Koramangala">
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button" (click)="searchPlace(searchQuery)">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                    
+                    <ul *ngFor="let p of places">
+                            <li>name: <a href="#">{{p.name}}</a></li>
+                            <li>types: <a href="#">{{p.types}}</a></li>
+                            <li>vicinity<a href="#">{{p.vicinity}}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+  </div>
+ </div>
