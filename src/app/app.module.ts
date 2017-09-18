@@ -5,13 +5,19 @@ import { FormsModule }   from '@angular/forms';
 import { AppComponent } from './app.component';
 import { PlaceSearchComponent } from './place-search/place-search.component'; 
 import { HttpModule } from '@angular/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { DisplayComponent } from './display/display.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlaceSearchComponent
+    PlaceSearchComponent,
+    NavbarComponent,
+    DisplayComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

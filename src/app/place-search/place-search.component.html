@@ -4,20 +4,35 @@
         <h2>Places you want to search</h2>
             <div id="custom-search-input">
                 <div class="input-group col-md-12">
-                    <input id="search-box" type="text" class="search" [(ngModel)]="searchQuery"  placeholder="Restaurants in Koramangala">
+                    <input #searchbox id="searchbox" type="text" class="form-control"   placeholder="Restaurants in Koramangala">
                     <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button" (click)="searchPlace(searchQuery)">
+                        <button class="btn btn-info btn-lg" type="submit" (click)="searchPlaces(searchbox.value)">
                             <i class="glyphicon glyphicon-search"></i>
                         </button>
                     </span>
-                    
-                    <ul *ngFor="let p of places">
-                            <li>name: <a href="#">{{p.name}}</a></li>
-                            <li>types: <a href="#">{{p.types}}</a></li>
-                            <li>vicinity<a href="#">{{p.vicinity}}</a></li>
-                    </ul>
-                </div>
-            </div>
+                </div><!--end of input group-->
+            </div><!--end of custom search input-->
         </div>
-  </div>
- </div>
+    </div><!--end of row-->
+
+    <div class="container">
+            <div *ngFor='let place of places.results' class="place row">
+              <div class="row well" id="result">
+              <div class="col-sm-6">
+                 <img src="{{Url}}{{place.photos[0].photo_reference}}{{apikey}}">
+              </div>
+          
+              <div class="col-sm-6">
+                 <p><img src= "{{place.icon}}" /></p>
+                 <p>Name: {{place.name}}</p>
+                 <p>Rating: {{place.rating}}</p>
+                 <p>Details: {{place.formatted_address}}</p>
+                 <!--<p>Opening Hours:{{place.opening_hours}}</p>-->
+              </div> 
+            </div><!--end row well-->   
+            </div><!--end of place row-->
+    </div><!--end of image row container-->
+
+</div><!--end of container-->
+                    
+                   
